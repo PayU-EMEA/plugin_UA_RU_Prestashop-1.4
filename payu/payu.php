@@ -89,7 +89,6 @@ class payu extends PaymentModule
 		$this->_html .= '<img src="../modules/payu/payu.jpg" style="float:left; margin-right:15px;"><b>'.
 						$this->l('This module allows you to accept payments by PayU.').'</b><br /><br />'.
 						$this->l('If the client chooses this payment mode, the order will change its status into a \'Waiting for payment\' status.').
-						'<br />'.$this->l('Therefore, you must manually confirm the order as soon as you receive the wire.').
 						'<br /><br /><br />';
 	}
 
@@ -148,7 +147,7 @@ class payu extends PaymentModule
 		$smarty->assign(array(
 			'this_path' => $this->_path,
 			'this_path_ssl' => Tools::getShopDomainSsl(true, true).__PS_BASE_URI__.'modules/'.$this->name.'/',
-			'this_description' => 'PayU payment system'
+			'this_description' => 'Оплата через систему PayU'
 		));
 
 		return $this->display(__FILE__, 'payu.tpl');

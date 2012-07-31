@@ -6,7 +6,7 @@ include(dirname(__FILE__).'/payu.scls.php');
 
 $payu = new payu();
 
-if ($cart->id_customer == 0 OR $cart->id_address_delivery == 0 OR $cart->id_address_invoice == 0 OR !$payu->active)
+if ($currency->iso_code != $payu->Payu_getVar("currency") OR $cart->id_customer == 0 OR $cart->id_address_delivery == 0 OR $cart->id_address_invoice == 0 OR !$payu->active)
 	Tools::redirectLink(__PS_BASE_URI__.'order.php?step=1');
 
 $authorized = false;
